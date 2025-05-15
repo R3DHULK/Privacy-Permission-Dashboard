@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Privacy Permission Dashboard</h1>
+            <p id="current-tab-url">Loading current tab information...</p>
+        </header>
+        <div class="tab-selector">
+            <button id="current-tab-btn" class="tab-btn active">Current Tab</button>
+            <button id="all-tabs-btn" class="tab-btn">All Tabs</button>
+        </div>
+
+        <div id="current-tab-view" class="tab-content active">
+            <div id="permissions-list" class="permissions-list">
+                <div class="loading">Loading permissions...</div>
+            </div>
+        </div>
+
+        <div id="all-tabs-view" class="tab-content">
+            <div id="all-tabs-list" class="all-tabs-list">
+                <div class="loading">Loading all tabs...</div>
+            </div>
+        </div>
+
+        <!-- Settings Panel -->
+        <div id="settings-panel" class="settings-panel">
+            <div class="settings-header">
+                <h2>Settings</h2>
+                <button id="close-settings" class="close-btn">×</button>
+            </div>
+
+            <div class="settings-content">
+                <section class="settings-section">
+                    <h3>Appearance</h3>
+                    <div class="setting-item">
+                        <label for="theme-selector">Theme</label>
+                        <select id="theme-selector" class="settings-select">
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                            <option value="system">System</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <span class="setting-label">Advanced Mode</span>
+                        <label class="permission-toggle">
+                            <input type="checkbox" id="advanced-mode-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <h3>Default Permission Preferences</h3>
+                    <div class="setting-item">
+                        <label for="default-camera">Camera</label>
+                        <select id="default-camera" class="settings-select default-permission-select"
+                            data-permission="camera">
+                            <option value="prompt">Ask</option>
+                            <option value="allowed">Allow</option>
+                            <option value="blocked">Block</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="default-microphone">Microphone</label>
+                        <select id="default-microphone" class="settings-select default-permission-select"
+                            data-permission="microphone">
+                            <option value="prompt">Ask</option>
+                            <option value="allowed">Allow</option>
+                            <option value="blocked">Block</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="default-geolocation">Location</label>
+                        <select id="default-geolocation" class="settings-select default-permission-select"
+                            data-permission="geolocation">
+                            <option value="prompt">Ask</option>
+                            <option value="allowed">Allow</option>
+                            <option value="blocked">Block</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="default-notifications">Notifications</label>
+                        <select id="default-notifications" class="settings-select default-permission-select"
+                            data-permission="notifications">
+                            <option value="prompt">Ask</option>
+                            <option value="allowed">Allow</option>
+                            <option value="blocked">Block</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="default-storage">Storage</label>
+                        <select id="default-storage" class="settings-select default-permission-select"
+                            data-permission="storage">
+                            <option value="prompt">Ask</option>
+                            <option value="allowed">Allow</option>
+                            <option value="blocked">Block</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="default-cookies">Cookies</label>
+                        <select id="default-cookies" class="settings-select default-permission-select"
+                            data-permission="cookies">
+                            <option value="prompt">Ask</option>
+                            <option value="allowed">Allow</option>
+                            <option value="blocked">Block</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <h3>Auto-Block Domains</h3>
+                    <div class="auto-block-container">
+                        <div id="auto-block-domains" class="domain-list">
+                            <!-- Domains will be added dynamically here -->
+                        </div>
+
+                        <form id="add-domain-form" class="add-domain-form">
+                            <input type="text" id="new-domain" placeholder="Enter domain (e.g. example.com)"
+                                class="domain-input">
+                            <button type="submit" class="add-btn">Add</button>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <h3>Notifications</h3>
+                    <div class="setting-item">
+                        <span class="setting-label">Show Permission Change Notifications</span>
+                        <label class="permission-toggle">
+                            <input type="checkbox" id="notification-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="settings-section actions">
+                    <button id="reset-settings" class="reset-btn">Reset to Defaults</button>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <div id="settings-icon" class="settings-icon">⚙️</div>
+            <span>Privacy Permission Dashboard v1.0</span>
+        </footer>
+    </div>
+
+    <script src="settings.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
