@@ -75,14 +75,6 @@ In today's digital landscape, websites constantly request access to your persona
 - Reduce notification spam from websites
 - Manage cookie and storage policies to protect your privacy
 
-## 🔮 Future Enhancements
-
-- Permission usage history and statistics
-- Export/import settings
-- Site-specific permission profiles
-- Enhanced permission request detection
-- Container-based permission isolation
-
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
@@ -95,7 +87,7 @@ Contributions are welcome! Feel free to:
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](/license.md) file for details.
 
 ## 🔒 Privacy Statement
 
